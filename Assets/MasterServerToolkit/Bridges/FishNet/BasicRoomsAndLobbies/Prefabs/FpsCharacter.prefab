@@ -423,10 +423,10 @@ MonoBehaviour:
   <ChildNetworkObjects>k__BackingField: []
   _isNetworked: 1
   _isGlobal: 0
-  _disableOnDespawn: 0
+  _defaultDespawnType: 0
   NetworkObserver: {fileID: 0}
   <PrefabId>k__BackingField: -1
   _scenePathHash: 0
   <SceneId>k__BackingField: 0
-  <AssetPathHash>k__BackingField: 11375929002548324322
+  <AssetPathHash>k__BackingField: 6008557082662207704
   _sceneNetworkObjects: []

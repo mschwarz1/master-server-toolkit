@@ -1,4 +1,5 @@
 ﻿#if FISHNET
+using System;
 using System.IO;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
@@ -27,9 +28,9 @@ namespace MasterServerToolkit.MasterServer.Examples.FishNetworking
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
             {
                 scenes = new[] {
-                    "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Room/Zone1.unity",
-                    "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Room/Zone2.unity",
-                    "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Room/Zone3.unity",
+                    DirectoryReferences.mstOffsetPath + "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Room/Zone1.unity",
+                    DirectoryReferences.mstOffsetPath + "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Room/Zone2.unity",
+                    DirectoryReferences.mstOffsetPath + "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Room/Zone3.unity",
                 },
                 locationPathName = Path.Combine(buildFolder, "Room.exe"),
                 target = BuildTarget.StandaloneWindows64,
@@ -64,6 +65,8 @@ namespace MasterServerToolkit.MasterServer.Examples.FishNetworking
             {
                 Debug.Log("Room build failed");
             }
+
+            SwitchBack();
         }
 
         [MenuItem(Mst.ToolMenu + "Build/Demos for FishNet/Basic Worlds/Master Server and Spawner")]
@@ -74,7 +77,7 @@ namespace MasterServerToolkit.MasterServer.Examples.FishNetworking
 
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
             {
-                scenes = new[] { "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Master/Master.unity" },
+                scenes = new[] { DirectoryReferences.mstOffsetPath + "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Master/Master.unity" },
                 locationPathName = Path.Combine(buildFolder, "MasterAndSpawner.exe"),
                 target = BuildTarget.StandaloneWindows64,
 #if UNITY_2021_1_OR_NEWER
@@ -109,6 +112,8 @@ namespace MasterServerToolkit.MasterServer.Examples.FishNetworking
             {
                 Debug.Log("Master Server build failed");
             }
+
+            SwitchBack();
         }
 
         [MenuItem(Mst.ToolMenu + "Build/Demos for FishNet/Basic Worlds/Spawner")]
@@ -120,7 +125,7 @@ namespace MasterServerToolkit.MasterServer.Examples.FishNetworking
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
             {
                 scenes = new[] {
-                    "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Spawner/Spawner.unity"
+                    DirectoryReferences.mstOffsetPath + "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Spawner/Spawner.unity"
                 },
                 locationPathName = Path.Combine(buildFolder, "Spawner.exe"),
                 target = BuildTarget.StandaloneWindows64,
@@ -157,6 +162,8 @@ namespace MasterServerToolkit.MasterServer.Examples.FishNetworking
             {
                 Debug.Log("Spawner build failed");
             }
+
+            SwitchBack();
         }
 
         [MenuItem(Mst.ToolMenu + "Build/Demos for FishNet/Basic Worlds/Client")]
@@ -167,10 +174,10 @@ namespace MasterServerToolkit.MasterServer.Examples.FishNetworking
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
             {
                 scenes = new[] {
-                    "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Client/Client.unity",
-                    "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Room/Zone1.unity",
-                    "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Room/Zone2.unity",
-                    "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Room/Zone3.unity",
+                    DirectoryReferences.mstOffsetPath + "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Client/Client.unity",
+                    DirectoryReferences.mstOffsetPath + "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Room/Zone1.unity",
+                    DirectoryReferences.mstOffsetPath + "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Room/Zone2.unity",
+                    DirectoryReferences.mstOffsetPath + "Assets/MasterServerToolkit/Bridges/FishNet/BasicWorlds/Scenes/Room/Zone3.unity",
                 },
                 locationPathName = Path.Combine(buildFolder, "Client.exe"),
                 target = BuildTarget.StandaloneWindows64,
@@ -198,6 +205,13 @@ namespace MasterServerToolkit.MasterServer.Examples.FishNetworking
             {
                 Debug.Log("Client build failed");
             }
+
+            SwitchBack();
+        }
+
+        private static void SwitchBack()
+        {
+            EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
         }
     }
 }
