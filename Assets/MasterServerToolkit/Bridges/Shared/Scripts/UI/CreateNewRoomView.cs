@@ -109,6 +109,16 @@ namespace MasterServerToolkit.Games
             }
         }
 
+        public string RoomScene
+        {
+            get
+            {
+                //return "Assets/Possesor/MSTIntegration/BasicRoomsAndLobbies/Scenes/Room/Room2.unity";
+
+                return "Assets/AddressableTesting/Scenes/SceneTesting/LoadableScenes/Test2.unity";
+            }
+        }
+
         public void CreateNewMatch()
         {
             Mst.Events.Invoke(MstEventKeys.showLoadingInfo, "Starting room... Please wait!");
@@ -121,6 +131,7 @@ namespace MasterServerToolkit.Games
             var spawnOptions = new MstProperties();
             spawnOptions.Add(Mst.Args.Names.RoomMaxConnections, MaxConnections);
             spawnOptions.Add(Mst.Args.Names.RoomName, roomNameRe.Replace(RoomName, "_"));
+            spawnOptions.Add(Mst.Args.Names.RoomOnlineScene, RoomScene);
 
             if (!string.IsNullOrEmpty(Password))
                 spawnOptions.Add(Mst.Args.Names.RoomPassword, Password);
