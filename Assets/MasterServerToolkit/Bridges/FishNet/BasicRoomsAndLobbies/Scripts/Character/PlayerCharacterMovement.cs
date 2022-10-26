@@ -1,6 +1,8 @@
 ﻿#if FISHNET
+using FishNet.Connection;
 using FishNet.Object;
 using FishNet.Object.Synchronizing;
+using System;
 using UnityEngine;
 
 namespace MasterServerToolkit.Bridges.FishNetworking.Character
@@ -157,6 +159,7 @@ namespace MasterServerToolkit.Bridges.FishNetworking.Character
             IsWalking = isWalking;
             IsRunning = isRunning;
         }
+
 
         protected virtual void UpdateMovement()
         {

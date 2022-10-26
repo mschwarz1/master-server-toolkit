@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 8015347165786630561}
   - component: {fileID: 5893848400122023704}
   - component: {fileID: -4936559094045431684}
+  - component: {fileID: -6109165343539023512}
   m_Layer: 0
   m_Name: FpsCharacter
   m_TagString: Untagged
@@ -430,3 +431,18 @@ MonoBehaviour:
   <SceneId>k__BackingField: 0
   <AssetPathHash>k__BackingField: 6008557082662207704
   _sceneNetworkObjects: []
+--- !u!114 &-6109165343539023512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8786336352432102918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76229ec064f299f4680ce4289721393e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentIndexCache: 255
+  _addedNetworkObject: {fileID: -4936559094045431684}
+  _networkObjectCache: {fileID: 0}

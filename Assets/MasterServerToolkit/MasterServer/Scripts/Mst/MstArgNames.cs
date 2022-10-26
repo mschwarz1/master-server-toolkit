@@ -107,6 +107,8 @@
         /// </summary>
         public string RoomOnlineScene => "-mstRoomOnlineScene";
 
+        public string SupplementalInfo => "-mstSupplementalInfo";
+
         /// <summary>
         /// Use this cmd to setup WebSockets mode on room server if you use WebGL version of client
         /// this feature works only is you server supports web sockets

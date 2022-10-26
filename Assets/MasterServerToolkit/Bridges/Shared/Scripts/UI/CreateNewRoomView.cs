@@ -132,6 +132,7 @@ namespace MasterServerToolkit.Games
             spawnOptions.Add(Mst.Args.Names.RoomMaxConnections, MaxConnections);
             spawnOptions.Add(Mst.Args.Names.RoomName, roomNameRe.Replace(RoomName, "_"));
             spawnOptions.Add(Mst.Args.Names.RoomOnlineScene, RoomScene);
+            spawnOptions.Add(Mst.Args.Names.SupplementalInfo, "TestLevel");
 
             if (!string.IsNullOrEmpty(Password))
                 spawnOptions.Add(Mst.Args.Names.RoomPassword, Password);
